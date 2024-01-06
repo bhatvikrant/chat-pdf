@@ -10,7 +10,7 @@ const inter = Inter({
 
 export const metadata = {
   title: "Chat PDF",
-  description: "Chat with any PDF file",
+  description: "Chat with any PDF",
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
