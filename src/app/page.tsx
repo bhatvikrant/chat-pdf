@@ -1,6 +1,8 @@
 import { MoveRight } from "lucide-react";
+import Link from "next/link";
 import { ContainerScroll } from "~/components/custom/container-scroll-animation";
-import { Button } from "~/components/ui/button";
+import { buttonVariants } from "~/components/ui/button";
+import { cn } from "~/lib/utils";
 
 export default function Home() {
   return (
@@ -83,8 +85,15 @@ export default function Home() {
         </span>
 
         <div className="flex w-full items-center justify-center space-x-4 py-4 md:pb-10">
-          <Button>Try now for free!</Button>
-          <Button variant="link">link</Button>
+          <Link
+            href="/dashboard"
+            className={cn(buttonVariants({ variant: "default" }))}
+          >
+            Start for free!
+          </Link>
+          <Link href="/" className={cn(buttonVariants({ variant: "link" }))}>
+            link
+          </Link>
         </div>
       </section>
 

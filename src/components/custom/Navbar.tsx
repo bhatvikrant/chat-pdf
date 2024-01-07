@@ -1,3 +1,4 @@
+import { UserButton } from "@clerk/nextjs";
 import { ScrollText } from "lucide-react";
 
 const Navbar = () => {
@@ -118,6 +119,9 @@ const Navbar = () => {
               </div>
             </a>
           </nav>
+          <div className="border-l pl-4">
+            <UserButton afterSignOutUrl="/" />
+          </div>
         </div>
       </div>
     </header>
