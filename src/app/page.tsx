@@ -1,5 +1,6 @@
 import { MoveRight } from "lucide-react";
 import Link from "next/link";
+import FileUpload from "~/components/custom/FileUpload";
 import { ContainerScroll } from "~/components/custom/container-scroll-animation";
 import { buttonVariants } from "~/components/ui/button";
 import { cn } from "~/lib/utils";
@@ -96,6 +97,8 @@ export default function Home() {
           </Link>
         </div>
       </section>
+
+      <FileUpload />
 
       <HeroScrollDemo />
     </div>
