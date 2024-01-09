@@ -1,8 +1,9 @@
 import "~/styles/globals.css";
 
 import { Inter } from "next/font/google";
-import { ClerkProvider } from "@clerk/nextjs";
 import Navbar from "~/components/custom/Navbar";
+import Providers from "~/Providers";
+import { Toaster } from "~/components/ui/sonner";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -21,13 +22,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <ClerkProvider>
+    <Providers>
       <html lang="en">
         <body className={`font-sans ${inter.variable}`}>
           <Navbar />
           {children}
         </body>
+        <Toaster />
       </html>
-    </ClerkProvider>
+    </Providers>
   );
 }
