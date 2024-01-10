@@ -18,7 +18,7 @@ export const env = createEnv({
       .enum(["development", "test", "production"])
       .default("development"),
     CLERK_SECRET_KEY: z.string(),
-    PINECONE_ENIVIRONMENT: z.string(),
+    PINECONE_ENVIRONMENT: z.string(),
     PINECONE_API_KEY: z.string(),
   },
 
@@ -49,7 +49,7 @@ export const env = createEnv({
     NEXT_PUBLIC_AWS_SECRET_ACCESS_KEY:
       process.env.NEXT_PUBLIC_AWS_SECRET_ACCESS_KEY,
     NEXT_PUBLIC_AWS_BUCKET_NAME: process.env.NEXT_PUBLIC_AWS_BUCKET_NAME,
-    PINECONE_ENIVIRONMENT: process.env.PINECONE_ENIVIRONMENT,
+    PINECONE_ENVIRONMENT: process.env.PINECONE_ENVIRONMENT,
     PINECONE_API_KEY: process.env.PINECONE_API_KEY,
     // NEXT_PUBLIC_CLIENTVAR: process.env.NEXT_PUBLIC_CLIENTVAR,
   },
