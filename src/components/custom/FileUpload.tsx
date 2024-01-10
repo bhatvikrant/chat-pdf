@@ -3,13 +3,16 @@
 import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
 import { Loader2, Upload } from "lucide-react";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useDropzone } from "react-dropzone";
 import { toast } from "sonner";
 import { uploadToS3 } from "~/lib/s3";
 
 const FileUpload = () => {
+  const router = useRouter();
   const [uploading, setUploading] = useState(false);
+
   const { mutate, isPending } = useMutation({
     mutationFn: async ({
       file_key,
@@ -53,9 +56,9 @@ const FileUpload = () => {
                 return;
               }
               mutate(data, {
-                onSuccess: (data) => {
-                  // eslint-disable-next-line @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-unsafe-member-access
-                  toast.success(data.message);
+                onSuccess: ({ chat_id }) => {
+                  toast.success("Chat created");
+                  router.push(`/chat/${chat_id}`);
                 },
                 onError: (error) => {
                   console.log("error:", error);
