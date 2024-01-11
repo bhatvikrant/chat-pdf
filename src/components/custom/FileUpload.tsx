@@ -8,6 +8,7 @@ import { useState } from "react";
 import { useDropzone } from "react-dropzone";
 import { toast } from "sonner";
 import { uploadToS3 } from "~/lib/s3";
+import { Badge } from "../ui/badge";
 
 const FileUpload = () => {
   const router = useRouter();
@@ -76,7 +77,12 @@ const FileUpload = () => {
     },
   });
   return (
-    <div className="mx-auto min-h-32 max-w-xl rounded-xl bg-white p-2">
+    <div className="relative mx-auto min-h-32 max-w-xl rounded-xl bg-white p-2">
+      <div className="absolute -top-1 right-0">
+        <Badge className="animate-bounce text-xs" variant="default">
+          Start here
+        </Badge>
+      </div>
       <div
         {...getRootProps({
           className:
