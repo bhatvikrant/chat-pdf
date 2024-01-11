@@ -6,8 +6,8 @@ const Navbar = () => {
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-14 max-w-screen-2xl items-center">
         <div className="mr-4 hidden md:flex">
-          <a className="mr-6 flex items-center space-x-2" href="/">
-            <ScrollText className="-rotate-12" />
+          <a className="group mr-6 flex items-center space-x-2" href="/">
+            <ScrollText className="-rotate-12 transition-all duration-1000 group-hover:rotate-0" />
 
             <span className="hidden font-bold sm:inline-block">ChatPDF</span>
           </a>
