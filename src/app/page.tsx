@@ -1,3 +1,4 @@
+import { auth } from "@clerk/nextjs";
 import { MoveRight } from "lucide-react";
 import Link from "next/link";
 import FileUpload from "~/components/custom/FileUpload";
@@ -6,6 +7,7 @@ import { buttonVariants } from "~/components/ui/button";
 import { cn } from "~/lib/utils";
 
 export default function Home() {
+  const { userId } = auth();
   return (
     <div className="relative isolate overflow-hidden">
       <svg
@@ -85,20 +87,22 @@ export default function Home() {
           information, and more.
         </span>
 
-        <div className="flex w-full items-center justify-center space-x-4 py-4 md:pb-10">
-          <Link
-            href="/dashboard"
-            className={cn(buttonVariants({ variant: "default" }))}
-          >
-            Start for free!
-          </Link>
-          <Link href="/" className={cn(buttonVariants({ variant: "link" }))}>
-            link
-          </Link>
-        </div>
+        {!userId && (
+          <div className="flex w-full items-center justify-center space-x-4 py-4 md:pb-10">
+            <Link
+              href="/sign-up"
+              className={cn(buttonVariants({ variant: "default" }))}
+            >
+              Sign up to start for free!
+            </Link>
+            <Link href="/" className={cn(buttonVariants({ variant: "link" }))}>
+              link
+            </Link>
+          </div>
+        )}
       </section>
 
-      <FileUpload />
+      {userId && <FileUpload />}
 
       <HeroScrollDemo />
     </div>
